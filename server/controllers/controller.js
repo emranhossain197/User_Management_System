@@ -31,15 +31,18 @@ lib.findUser = (req, res) => {
     if (req.query.email && req.query.phone) {
         const email = req.query.email;
         const phone = req.query.phone;
-        Schema.find({ "phone": phone, "email": email })
+        Schema.find({ phone: phone, email: email })
             .then(user => {
-                console.log(user);
-                res.status(200).send({ message: "user Find Successfully!" })
+                if (user.length === 1) {
+                    console.log(user);
+                    res.status(200).send({ message: "user Find Successfully!" })
+                } else if (user.length === 0) {
+                    res.status(404).send({ error: "user not find!" })
+
+                }
 
             })
-            .catch(() => {
-                res.status(500).send({ error: "Error Occurred while retriving user information" })
-            })
+
     } else {
         Schema.find()
             .then(user => {
