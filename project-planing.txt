@@ -1,0 +1,29 @@
+// user interfere 
+// admin interfere
+
+
+
+// user hanlder parmition 
+01. create 
+02. update
+03. delete
+
+user create information 
+
+01. name
+02. email
+03. gender 
+04. job
+05. address
+06. phone
+
+
+
+// admin hanld 
+
+
+01. spafice user update 
+02. all user show 
+03. spafice details for user 
+04. delete for user 
+05. filter function takbe jar mode  male and female filter kora jabe 
